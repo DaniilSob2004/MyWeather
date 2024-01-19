@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>My Weather</title>
+    </head>
+    
+    <body>
+        <header>
+            <h3>MY WEATHER</h3>
+            <div class="search-block">
+                <input type="text" id="searchCity" placeholder="Search city">
+                <img id="searchBtn" src="img/search.png" alt="search">
+            </div>
+        </header>
+
+        <div class="navigation-menu">
+            <div id="todayMenu" class="item-menu active-menu">
+                <span>Today</span>
+            </div>
+            <div id="fiveDayMenu" class="item-menu">
+                <span>5-day forecast</span>
+            </div>
+        </div>
+
+        <main>
+            <div class="five-day-block hide">
+                <div class="five-day-slide">
+                    <div class="card-block active-card" data-numday="1">
+                        <div class="slide-header-block">
+                            <span class="head-text">...</span>
+                            <span class="value-text">...</span>
+                        </div>
+                        <div class="slide-icon">
+                            <img src="img/default.png">
+                        </div>
+                        <div class="slide-temp-info">
+                            <span class="temp-value">...&deg;C</span>
+                            <span class="value-text descrip">...</span>
+                        </div>
+                    </div>
+                    <div class="card-block" data-numday="2">
+                        <div class="slide-header-block">
+                            <span class="head-text">...</span>
+                            <span class="value-text">...</span>
+                        </div>
+                        <div class="slide-icon">
+                            <img src="img/default.png">
+                        </div>
+                        <div class="slide-temp-info">
+                            <span class="temp-value">...&deg;C</span>
+                            <span class="value-text descrip">...</span>
+                        </div>
+                    </div>
+                    <div class="card-block" data-numday="3">
+                        <div class="slide-header-block">
+                            <span class="head-text">...</span>
+                            <span class="value-text">...</span>
+                        </div>
+                        <div class="slide-icon">
+                            <img src="img/default.png">
+                        </div>
+                        <div class="slide-temp-info">
+                            <span class="temp-value">...&deg;C</span>
+                            <span class="value-text descrip">...</span>
+                        </div>
+                    </div>
+                    <div class="card-block" data-numday="4">
+                        <div class="slide-header-block">
+                            <span class="head-text">...</span>
+                            <span class="value-text">...</span>
+                        </div>
+                        <div class="slide-icon">
+                            <img src="img/default.png">
+                        </div>
+                        <div class="slide-temp-info">
+                            <span class="temp-value">...&deg;C</span>
+                            <span class="value-text descrip">...</span>
+                        </div>
+                    </div>
+                    <div class="card-block" data-numday="5">
+                        <div class="slide-header-block">
+                            <span class="head-text">...</span>
+                            <span class="value-text">...</span>
+                        </div>
+                        <div class="slide-icon">
+                            <img src="img/default.png">
+                        </div>
+                        <div class="slide-temp-info">
+                            <span class="temp-value">...&deg;C</span>
+                            <span class="value-text descrip">...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="today-block">
+                <div class="current-weather-block">
+                    <div class="header-block head-text">
+                        <span>CURRENT WEATHER</span>
+                        <span id="dateNow">...</span>
+                    </div>
+                    <div class="current-content-block">
+                        <div class="icon-block">
+                            <img id="curIcon" class="icon" src="img/default.png">
+                            <span id="curDescrip" class="value-text">...</span>
+                        </div>
+                        <div class="temp-block">
+                            <span id="tempValue" class="temp-value">...&deg;C</span>
+                            <div class="value-text">
+                                <span>Real Feel</span>
+                                <span id="realTempValue">...&deg;C</span>
+                            </div>
+                        </div>
+                        <div class="sun-block">
+                            <div class="value-text">
+                                <span>Sunrise:</span>
+                                <span>Sunset:</span>
+                                <span>Duration:</span>
+                            </div>
+                            <div class="value-text">
+                                <span id="sunrise">... AM</span>
+                                <span id="sunset">... PM</span>
+                                <span id="durationDay">... hr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hourly-block">
+                <div class="header-block">
+                    <span class="head-text">HOURLY</span>
+                </div>
+                <div class="hourly-table-block">
+                    <table id="hourlyTable">
+                        <tr>
+                            <th>TODAY</th>
+                            <th>...</th>
+                            <th>...</th>
+                            <th>...</th>
+                            <th>...</th>
+                            <th>...</th>
+                            <th>...</th>
+                            <th>...</th>
+                            <th>...</th>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                            <td><img class="icon" src="img/default.png"></td>
+                        </tr>
+                        <tr>
+                            <td>Forecast</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                        <tr>
+                            <td>Temp (&deg;C)</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                        </tr>
+                        <tr>
+                            <td>RealFeel</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                            <td>...&deg;</td>
+                        </tr>
+                        <tr>
+                            <td>Wind (km/h)</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                            <td>...</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="error-block hide">
+                <img src="img/error.png">
+                <p>Qwerty could not be found.<br>Please enter a different location.</p>
+            </div>
+        </main>
+    </body>
+
+    <script type="module" src="js/script.js"></script>
+    <!-- module / text/javascript -->
+    
+</html>

@@ -1,0 +1,237 @@
+* {
+    box-sizing: border-box;
+
+    --main-color: #178E93;
+    --value-color: #9498A0;
+    --highlight-text-color: black;
+    --white-color: whitesmoke;
+    --bg-header: #F6F6F6;
+    --bg-navmenu: #404040;
+    --bg-hover-navmenu: #585858;
+    --bg-white: white;
+    --bg-main: #D7D7D7;
+    --bg-card: #EDEDED;
+    --bg-hover-card: #F6F6F6;
+}
+body {
+    font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main);
+}
+.header-block {
+    display: flex;
+    justify-content: space-between;
+}
+.head-text {
+    color: var(--main-color);
+    font-weight: bold;
+}
+.temp-value {
+    color: var(--highlight-text-color);
+    font-weight: 400;
+    font-size: 1.75em;
+}
+.value-text, #hourlyTable td:first-child {
+    color: var(--value-color);
+    font-size: 0.85em;
+}
+.icon {
+    width: 35px;
+    height: 35px;
+}
+.current-weather-block,
+.hourly-block,
+.error-block,
+.card-block {
+    background-color: var(--bg-white);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* --------------------- HEADER --------------------- */
+header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-header);
+}
+header h3 {
+    color: #178E93;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+.search-block {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-white);
+    border: 1px solid #D6D6D6;
+    margin-right: 20px;
+    padding-right: 5px;
+}
+.search-block img {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+.search-block input {
+    outline: none;
+    border: none;
+    padding: 5px 8px;
+}
+
+/* --------------------- NAVIGATION MENU --------------------- */
+.navigation-menu {
+    display: flex;
+    background-color: var(--bg-navmenu);
+    color: var(--white-color);
+    font-size: 0.92em;
+    padding-left: 20px;
+}
+.item-menu {
+    padding: 8px 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.item-menu:hover {
+    background-color: var(--bg-hover-navmenu);
+}
+.active-menu {
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-bottom: 2px solid var(--main-color);
+}
+
+/* --------------------- CURRENT WEATHER --------------------- */
+main {
+    padding: 20px 20px 10px 20px;
+}
+.current-content-block {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+}
+.icon-block,
+.temp-block,
+.sun-block,
+.sun-block div {
+    display: flex;
+    flex-direction: column;
+}
+.icon-block {
+    align-items: center;
+}
+.icon-block img {
+    margin-bottom: 7px;
+}
+.sun-block {
+    flex-direction: row;
+}
+.sun-block div span {
+    margin-bottom: 6px;
+}
+.sun-block > div:last-child {
+    align-items: flex-end;
+    margin-left: 10px;
+}
+
+/* --------------------- HOURLY --------------------- */
+.hourly-table-block {
+    overflow-x: auto;
+}
+#hourlyTable {
+    width: 100%;
+    min-width: 700px;
+    border-spacing: 20px;
+    text-align: center;
+    table-layout: fixed;
+}
+#hourlyTable tr td:first-child,
+#hourlyTable tr th:first-child {
+    text-align: left;
+}
+
+/* --------------------- ERROR --------------------- */
+.error-block {
+    text-align: center;
+}
+.error-block img {
+    width: 300px;
+    height: 200px;
+}
+.error-block p {
+    color: var(--main-color);
+    font-size: 1.25em;
+}
+
+/* --------------------- 5-DAY SLIDE FORECAST --------------------- */
+.five-day-block {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.five-day-slide {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+}
+.card-block {
+    display: inline-block;
+    background-color: var(--bg-card);
+    margin-left: 5px;
+    width: 135px;
+    padding: 20px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s;
+    margin-bottom: 3px;
+}
+.card-block:hover {
+    background-color: var(--bg-hover-card);
+}
+.active-card {
+    background-color: var(--bg-header);
+}
+.slide-header-block,
+.slide-temp-info {
+    display: flex;
+    flex-direction: column;
+}
+.slide-header-block
+.head-text,
+.slide-temp-info
+.temp-value {
+    margin-bottom: 5px;
+}
+.slide-icon {
+    margin: 15px 0;
+    text-align: center;
+}
+.slide-icon img {
+    width: 50px;
+    height: 50px;
+}
+
+/* --------------------- MEDIA REQUESTS --------------------- */
+@media only screen and (max-width: 350px) {
+    header {
+        flex-direction: column;
+        height: 100px;
+        justify-content: center;
+    }
+    header h3 {
+        margin: 10px;
+    }
+    .search-block {
+        margin-right: 0px;
+        margin: 5px;
+    }
+}
+
+/* переместил в конец, для приоритета */
+.hide {
+    display: none;
+}
